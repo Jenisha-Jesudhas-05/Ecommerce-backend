@@ -9,9 +9,12 @@ import cartRoutes from "./modules/cart/cart.routes";
 
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
 app.use(cors());
 app.use(express.json());
-
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
